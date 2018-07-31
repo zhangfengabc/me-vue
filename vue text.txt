@@ -1,0 +1,182 @@
+com.capgemini.ace
+
+https://m.runoob.com/vue2/vue-install.html
+# 查看版本
+npm -v
+
+#升级 npm
+cnpm install npm -g
+
+# 最新稳定版
+$ cnpm install vue
+
+# 全局安装 vue-cli
+$ cnpm install --global vue-cli
+
+
+
+# 创建一个基于 webpack 模板的新项目
+$ vue init webpack my-project   ------------------1
+# 这里需要进行一些配置，默认回车即可
+This will install Vue 2.x version of the template.
+
+For Vue 1.x use: vue init webpack#1.0 my-project
+
+
+cd my-project ------------------2
+cnpm install----------------------3
+cnpm run dev------------------------4
+
+
+
+config-----index.js    useEsling:false
+
+
+
+
+如上图中webpack.base.config.js的代码定义了eslint的语法规则，如果我们想要禁用eslint的功能，可以将下图的代码给注释掉
+
+//...(config.dev.useEslint ? [createLintingRule()] : []),
+
+重启服务 
+npm run dev
+
+
+
+运行步骤
+D:
+cd 复制的路径
+cnpm install 
+cnpm run dev
+
+
+
+下载Vetur    代码高亮提示
+Path Intellisense      解析路径
+
+
+
+#安装路由
+cnpm install vue-router
+
+#安装vux
+cnpm install --save vux
+
+如何在你的Vue项目配置vux
+1.项目里安装vux
+  npm install vux --save
+2.安装vux-loader（vux2必须结合vux-loader使用，本文也只是介绍vux2的配置）
+  npm install vux-loader --save-dev
+3.安装less-loader
+  npm install less less-loader --save-dev
+安装完成记得在webpack.base.conf.js里做如下配置，在extensions里加入less
+
+resolve: {
+    extensions: ['.js', '.vue', '.json', 'less'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+    }
+  }
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+
+  4.安装yaml-loader
+  npm install yaml-loader --save-dev
+
+
+
+
+
+
+
+iView-project
+
+This project is build for Vue.js 2 + vue-router + webpack2 + iView 2, just install and run.
+
+
+// install dependencies
+npm install
+
+Development
+
+// For the first time, run init to create index.html
+npm run init
+npm run dev
+
+Production(Build)
+
+npm run build
+
+
+去那儿网6.1讲的
+git的简单命令
+git status //比较有什么不同
+git add .//先把本地的所有的文件添加到本地git的缓冲区
+git commit -m 'project initiazed'
+git push //把本地的代码都推到线上的仓库上了
+
+//vue-cli脚手架工具生成的项目
+package.json:表示在开发项目的时候的一些依赖
+package-lock.json:是package的一个锁文件，可以确定安装的一些第三方包的一些版本，保证团队编程的统一
+license:是一个开源协议的说明
+index.html:首页的一个模板文件
+.postcssrc.css：是对postcss的一个配置项
+.gitignore:使用git的时候想把项目上传到线上，但是有一些特殊的文件，并不希望把它传到线上去，就可以把这些特殊的文件配置在gitignore里面，这样在git提交的时候，不会提交到仓库当中
+.eslintrc.js：对代码进行检测，看看是否标准,写代码必须按这个规范写，才不会做错误的提示
+.eslintignore:在根目录里面的build,config,dist,*.js这些文件是不会受eslint进行检测的，就算写的不标准也不会进行代码提示
+.editorconfig:帮我们配置了一些编辑器里面的语法
+.babelrc:我们的项目的代码是单文件组件的语法，所以他需要babel这种语法解释器进行转换，最终转换成浏览器能够编译执行的代码，可以在这个文件里面进行配置
+static:实际放的是项目的一些静态资源（图片。json数据）
+node-modules：放的是项目依赖的第三方node的包
+scr：放的整个项目的源码
+main：整个项目的入口文件
+App.vue:项目的最原始的根组件
+router:放路由
+components:放的项目的一些小组件
+config:项目的配置文件，index.js:基础的配置信息  dev.env.js:开发环境的信息  prod.env.js:线上环境的信息
+build:放的是项目打包的一些webpack的一些信息
+
+路由：根据网址的不同，返回不同的内容给用户
+<router-view></router-view>:显示的是当前路由地址所对应的内容
+
+单页面应用：优点：页面切换快  缺点：首屏时间慢，SEO差
+border.css:解决移动端1px边框的问题，有的手机屏幕分辨率比较高，是2倍屏，3倍屏，比如写的border-bottom:1px solid red.
+实际上指的是css像素，但是在2倍屏，3倍屏上仔细去看实际上显示的是2个物理像素的高度或者3个物理像素的高度
+
+这2个
+npm install fastclick --save :把fastclick包安装到项目依赖中
+npm install stylus --save: 安装stylus
+npm install stylus-loader --save 
+
+//css只会对当前组件有效
+<style lang="stylus" scoped>
+
+git checkout master: git切换到master分支
+git merge origin/index-swiper
+
+
+google下载插件 vue devtools 调试和查看数据
+
+npm install axios --save
+npm install better-scroll --save
+
+
+
+
+
+
+
+
+
+
+
+
+
+

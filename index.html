@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{content}}</div>
+        <input type="text" v-model="inputValue">
+        <button v-on:click="handleBtnClick">提交</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+        <todo-item v-for='item in list' v-bind:content="item"></todo-item>
+    </div>
+    <script>
+        Vue.component('TodoItem',{
+            
+        })
+        var TodoItem={
+            props:['content'],
+            template:'<li>{{content}}</li>'
+        }
+        var app=new Vue({
+            el:'#app',
+            data:{
+                content:'Hello world!',
+                list:['第一课的内容','第二课的内容'],
+                inputValue:''
+            },
+            components:{
+                TodoItem:TodoItem
+            },
+            methods:{
+                handleBtnClick:function(){
+                    this.list.push(this.inputValue);
+                    this.inputValue="";
+                }
+            }
+        })
+        setTimeout(function(){
+            app.$data.content='bye world'
+        },2000)
+    </script>
+</body>
+</html>

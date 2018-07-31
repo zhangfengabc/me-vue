@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       eeee
+    </div>
+    <script>
+        // vue的生命周期钩子
+        var app=new Vue({
+            el:'#app',
+            // template:'<div>123</div>',
+            beforeCreate:function(){
+                console.log("beforeCreate");
+            },
+            created:function(){
+                console.log("created")
+            },
+            beforeMount:function(){
+                console.log("beforeMount");
+            },
+            mounted:function(){
+                console.log("mounted");
+            },
+            beforeDestory:function(){
+                console.log("beforeDestory");
+            },
+            destory:function(){
+                console.log("destory");
+            },
+            beforeUpdate:function(){
+                console.log(“);
+            }
+        
+        })
+        //生命周期函数是vue实例在某个时间点自动执行的函数
+    </script>
+</body>
+</html>

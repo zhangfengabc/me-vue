@@ -1,0 +1,73 @@
+1.table-tbody-row组件时，用is属性代替  <tr is="row"></tr>  使用is属性解决模板标签上的bug的问题
+2.new Vue的时候data{}是个对象，在子组件里面data:functiion(){ruturn{content:'this is content'}}是个函数
+3.通过ref引用的形式可以操作dom,<div ref="hello" @click="handleClick">hello world</div>
+  methods:{
+    handleClick:function(){
+      console.log(this.$refs.hello)//获取的是dom节点，<div>hello world</div>
+      console.log(this.$refs.hello.innerHTML)//hello world
+     }	
+  }
+4.父子数据传递用props,子父数据传递用$emit,子组件可以直接使用父组件传递下来的数据，但是子组件不能直接修改父组件传递过来的数据，可以使用props:['count'],data:function(){return{number:this.count}}
+5.父子组件数据传递参数校验，props特性
+	<child content="hell">Hello</child>
+	props:{
+   		content:Number     /1.content只能是数字，  
+   		content:[Number|String]       /2.content可以是数字也可以是字符串,
+   		content:{type:String,require:true}   3.content必须是字符串，而且必传
+   		content:{type:String,require:true,default:'default value'} 3.content必须是字符串，而且必传,default是默认值，要是不传content,默认显示defult里面的内容
+   		content:{type:String,require:true,default:'default value',validator:function(value){return (value.lenght)>5}} //字符串校验，长度必须大于5
+	}
+ 非props特性是父组件向子组件传值，子组件不接收，而且在审查元素的时候标签上有传递的值，props特性的没有
+6.vue中的插槽<slot></slot>
+  <div>
+     <child>
+         <h1>Dell</h1>
+     </child>
+  </div>
+  Vue.component('child',{
+     template:`<div>
+                  <div class="content">
+                     <p>Hello world</p>
+                     <slot>默认内容</slot>
+                  </div>
+               `</div>
+  })
+  2.具名插槽
+  <div>
+     <body-content>
+         <div class="header" slot="header">header</div>
+         <div class="footer" slot="footer">footer</div>
+     </body-content>
+  </div>
+  Vue.component('body-content',{
+     template:`<div>
+                  <div class="content">
+                     <slot name="header"></slot>
+                     <div class="content">content</div>
+                     <slot name="footer"></slot>
+                  </div>
+               `</div>
+  })
+  3.作用域插槽
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
