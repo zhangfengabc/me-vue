@@ -1,0 +1,109 @@
+安装CLI   npm install -g cnpm --registry=https://registry.npm.taobao.org     cnpm install -g @angular/cli
+npm install cl
+所有angular的命令都是ng开头的
+ng version  查看cli的版本
+angular cli创建项目并运行
+1.ng new my-app   创建项目（）
+2.cd my-app  打开my-app文件夹
+3.ng serve  启动angular cli的编译和运行
+
+步骤改进：
+1.ng new my-app --skip-install(阻止angular cli使用npm安装响应的依赖库)
+2.cd my-app
+3.cnpm install
+4.ng serve
+
+
+分析项目的目录结构
+
+packjson是引用的类库
+.angular-cli.json配置了整个编译过程中使用的图标、样式、依赖关系、环境信息
+项目目录在src目录下
+main.ts是项目的入口
+
+
+
+ng new 理解ng new的主要功能和使用方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+angular组件由2大部分组成，分别是component（装饰器（有些参数---元数据））组件和class类  组件类
+
+
+
+
+
+
+
+
+
+
+
+
+如果仅仅是定义了一个类，angular是不知道如解释这个类的，如果在这个类上加上component装饰器，这个装饰器会在运行的时候通过某一种方式注入到
+这个类里面，这样后台angular2就能识别出来原来这个类是一个组件类
+装饰器的作用：赋予一个类更丰富的信息（元数据）
+
+
+@Component({
+  selector:'hello',    //selector属性能匹配html里面的hello标签，selector是一个css3选择器
+  template:'<p>{{greeting}}</p>'    //模板，定义一个类的模板，
+
+})
+export class HelloComponent{
+  private greeting:string;
+  constructor(){
+    this.greeting='Hello,Angular2';
+  }
+}
+
+<hello>
+  <p>Hello,Angular 2!</p>
+</hello>
+当组件逻辑执行完之后，输出到视图内容就会填充到这个hello标签里，最终p标签会嵌入到hello标签里
+而模板里面的变量也会替换成具体的值
+
+
+
+
+
+
+注意：一个组件里只能指定选择一种来指定模板。
+数据绑定语法可以直接使用组件类里面的成员变量
+比较常见的数据绑定：
+1.属性绑定【value】（单向绑定）
+  作用是把组件类的数据传递到组件模板中，例如<input [value]="myData"/>
+2.事件绑定（keyup）（单项绑定）
+  作用是把模板里产生的数据通过函数调用的方式传递到组件类
+  例如<input (keyup)="handle($event)"/>当keyup事件触发的时候会调用组件类的实例方法handle,同时把event对象
+当做函数的对象传递过去
+
+3.双向绑定[(ngModel)]
+
+
+
+指令：自身不带模板，指令是起作用于组件上的模板
+指令有2种：
+1.属性指令：改变组件模板的外观或者行为，如样式
+2.结构指令：改变组件模块的ＤＯＭ结构，如ｎｇ－ｉｆ用来插入或者移除ＤＯＭ节点
+组件：自身带有模板
+
+
+
+
